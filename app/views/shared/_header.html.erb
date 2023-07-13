@@ -1,0 +1,79 @@
+<!-- Header -->
+<header id="header">
+  <div class="container">
+
+    <div class="navbar-header">
+      <!-- Logo -->
+      <div class="navbar-brand">
+        <a class="logo" href="/">
+          <%= image_tag "logo.png" %>
+        </a>
+      </div>
+      <!-- /Logo -->
+
+      <!-- Mobile toggle -->
+      <button class="navbar-toggle">
+        <span></span>
+      </button>
+      <!-- /Mobile toggle -->
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+      <ul class="main-menu nav navbar-nav navbar-right">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <%= link_to about_path do %>
+          About
+          <% end %>
+        </li>
+
+        <li>
+          <% if current_user&.admin? %>
+            <%= link_to admin_syllabuses_path do %>
+              Course
+            <% end %>
+          <% else %>
+            <%= link_to syllabuses_path do %>
+              Course
+            <% end %>
+          <% end %>
+        </li>
+        <li>
+          <% if current_user&.admin? %>
+            <%= link_to admin_blogs_path do %>
+              Blog
+            <% end %>
+          <% else %>
+            <%= link_to blogs_path do %>
+              Blog
+            <% end %>
+          <% end %>
+        </li>
+        <li>
+          <% if current_user&.admin? %>
+            <%= link_to admin_students_path do %>
+              Student
+            <% end %>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to contact_index_path do %>
+          Contact
+          <% end %>
+        </li>
+        <li>
+          <% if user_signed_in? %>
+          <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
+          <% else %>
+          <%= link_to 'Sign In', new_user_session_path %>
+          <% end -%>
+        </li>
+        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+      </ul>
+    </nav>
+  </div>
+</header>

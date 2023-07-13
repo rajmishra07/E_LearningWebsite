@@ -1,0 +1,42 @@
+<!-- Courses -->
+<div id="courses" class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="section-header text-center">
+        <h2>Explore Courses</h2>
+        <p class="lead">
+          By living in books, eloquence comes from the right, and they do not abhor it brilliantly.
+        </p>
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- container -->
+</div>
+<!-- /Courses -->
+
+
+<div class="col-lg-12">
+ <%#= link_to "New Syllabus", new_admin_syllabus_path, class: 'btn btn-outline-primary float-end mb-4' %> 
+ <!-- <h2 class="text-center">Course List</h2> -->
+ <table class="table table-striped">
+  <thead>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @syllabuses.each do |syllabus| %>
+    <tr>
+      <td><%= syllabus.title %></td>
+      <td><%= truncate syllabus.description, length: 50 %></td>
+      <td>
+        <%= link_to 'View', syllabus_path(syllabus), class:'btn btn-success' %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
