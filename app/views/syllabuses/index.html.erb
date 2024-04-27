@@ -7,36 +7,32 @@
       <div class="section-header text-center">
         <h2>Explore Courses</h2>
         <p class="lead">
-          By living in books, eloquence comes from the right, and they do not abhor it brilliantly.
+          Learn in a Smart way and explore the world of coding.
         </p>
       </div>
     </div>
     <!-- /row -->
-  </div>
+    <div class="row">   
+      <div class="col-lg-8 mx-auto">
+        <div class="shadow rounded">
+          <div class="card-body">
+            <div>
+              <div class="course p-5" style="  border-radius:20px 20px; padding-bottom: 20px;">
+                <a href="#" class="course-img">
+                  <%= image_tag 'course01' %>
+                  <i class="course-link-icon fa fa-link"></i>
+                </a>
+                <div class="text-center">
+                  <a class="course-title p-2" href="#" >Introduction to HTML</a
+                  > 
+                  <%= link_to 'Explore course', quiz_path , class:"main-button icon-button btn" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <!-- container -->
-</div>
-<!-- /Courses -->
-
-
-<div class="col-lg-12">
- <%#= link_to "New Syllabus", new_admin_syllabus_path, class: 'btn btn-outline-primary float-end mb-4' %> 
- <!-- <h2 class="text-center">Course List</h2> -->
- <table class="table table-striped">
-  <thead>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Action</th>
-  </thead>
-  <tbody>
-    <% @syllabuses.each do |syllabus| %>
-    <tr>
-      <td><%= syllabus.title %></td>
-      <td><%= truncate syllabus.description, length: 50 %></td>
-      <td>
-        <%= link_to 'View', syllabus_path(syllabus), class:'btn btn-success' %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  </div>
 </div>
