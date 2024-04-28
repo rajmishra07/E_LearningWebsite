@@ -1,79 +1,40 @@
-<!-- Header -->
-<header id="header">
-  <div class="container">
-
-    <div class="navbar-header">
-      <!-- Logo -->
-      <div class="navbar-brand">
-        <a class="logo" href="/">
-          <%= image_tag "logo.png" %>
-        </a>
-      </div>
-      <!-- /Logo -->
-
-      <!-- Mobile toggle -->
-      <button class="navbar-toggle">
-        <span></span>
-      </button>
-      <!-- /Mobile toggle -->
-    </div>
-
-    <!-- Navigation -->
-    <nav id="nav">
-      <ul class="main-menu nav navbar-nav navbar-right">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <%= link_to about_path do %>
-          About
-          <% end %>
-        </li>
-
-        <li>
-          <% if current_user&.admin? %>
-            <%= link_to admin_syllabuses_path do %>
-              Course
-            <% end %>
-          <% else %>
-            <%= link_to syllabuses_path do %>
-              Course
-            <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if current_user&.admin? %>
-            <%= link_to admin_blogs_path do %>
-              Blog
-            <% end %>
-          <% else %>
-            <%= link_to blogs_path do %>
-              Blog
-            <% end %>
-          <% end %>
-        </li>
-        <li>
-          <% if current_user&.admin? %>
-            <%= link_to admin_students_path do %>
-              Student
-            <% end %>
-          <% end %>
-        </li>
-
-        <li>
-          <%= link_to contact_index_path do %>
-          Contact
-          <% end %>
-        </li>
-        <li>
+<nav class="navbar navbar-expand-lg" style="background-color:#fff;">
+    <a class="navbar-brand fw-bold fs-2 px-5" href="/" style="color:#481B5F">Web_Impact</a>
+    <button class="navbar-toggler text-dark bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="navbar-toggler-icon"></i>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 px-5">
+        <li class="nav-item nav-link fs-5 ">
           <% if user_signed_in? %>
-          <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete } %>
-          <% else %>
-          <%= link_to 'Sign In', new_user_session_path %>
-          <% end -%>
+           <%= link_to 'My profile' , member_path(current_user) ,class:"nav-item" ,style:"color:#481B5F" %></li>
+           <% end %>
         </li>
-        <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li class="nav-item">
+          <a class="nav-link fs-5 fw-bold" aria-current="page" href="/" style="color:#481B5F">Home</a>
+        </li>
+        <li class="nav-item nav-link fs-5">
+          <%= link_to 'About', about_path, style:"color:#481B5F" %>
+        </li>
+        <li class="nav-item nav-link fs-5">
+          <% if current_user&.admin? %>
+            <%= link_to 'Course', admin_syllabuses_path, style:"color:#481B5F" %>
+          <% else %>
+            <%= link_to 'Course', syllabuses_path, style:"color:#481B5F" %>
+          <% end %>
+        </li>
+        <li class="nav-item nav-link fs-5">
+          <%= link_to 'Contact', contact_index_path, style:"color:#481B5F" %>
+        </li>
+        <li class="nav-item nav-link fs-5">
+          <% if user_signed_in? %>
+            <%= link_to 'Sign Out', destroy_user_session_path, data: { turbo_method: :delete }, class:"active" %>
+          <% else %>
+            <%= link_to 'Log In', new_user_session_path, style:"color:#481B5F" %>
+          <% end %>
+        </li>
+        <li class="nav-item nav-link fs-5"><%= link_to 'Sign Up', new_user_registration_path, style:"color:#481B5F" %>
+        </li>
       </ul>
-    </nav>
-  </div>
-</header>
+    </div>
+  </nav>
