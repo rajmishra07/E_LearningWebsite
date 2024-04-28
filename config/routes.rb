@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
     resources :activities
+    resources :funactivities
 
   get 'quiz/index'
   get 'quiz/submit'
   get 'quizzes/show'
+
   #this is for the test model
 
   get  'about' => 'about_school#index'

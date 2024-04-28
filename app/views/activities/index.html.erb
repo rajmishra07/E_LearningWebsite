@@ -1,2 +1,31 @@
-<h1>Activity#index</h1>
-<p>Find me in app/views/activity/index.html.erb</p>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/assets/stateMap.css">
+</head>
+<body>
+    <div id="demobox">
+        <div id="map" class="mt-4">
+            <div id="select"></div>
+        </div>
+        <div id="details">
+            <div id="state-info" class="mt-4 card shadow">
+                <!-- Your details content goes here -->
+            </div>
+            <div class="imageDisplayWrapper">
+                <img class="imageToDisplay card shadow" style="height: 300px;width: 300px;" />
+            </div>
+        </div>
+    </div> <!-- demobox -->
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="//d3js.org/d3-queue.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="/assets/stateMap.js"></script>
+</body>
+</html>
+
+
+
