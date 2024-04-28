@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="section-header">
-          <h2>Welcome to Webimpact</h2>
+          <h1>Welcome to Webimpact</h1>
           <p class="text-dark">
             By living in books, eloquence comes from the right, and they do not abhor it brilliantly.
           </p>
@@ -42,7 +42,7 @@
           <i class="feature-icon fa fa-flask"></i>
           <div class="feature-content">
             <h4>Online Courses</h4>
-            <p class="mb-5 fs-4 text-dark">Explore our comprehensive courses in <span><b>HTML, CSS, JavaScript, Ruby on Rails,</b></span> and more.</p>
+            <p class="mb-5 fs-4 text-dark">Explore our comprehensive courses in <span><b>HTML, CSS</b></span> and more.</p>
           </div>
         </div>
         <!-- /feature -->
@@ -155,7 +155,22 @@
         <!-- /single course -->
       </div><hr>
   <!-- container -->
-</div>
+  <div class="row">
+    <div class="section-header text-center">
+      <h2>Learn with Fun Course</h2>
+      <h3 class="mb-5 fs-2">This Course is especially for for children and more.</h3>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-6 mx-auto text-center">
+      <div class="course" style=" border: 1px solid #CACFD6; border-radius:10px 10px;  box-shadow: 3px 3px 3px 3px; padding-bottom: 20px;">
+        <a href="#" class="course-img">
+          <%= image_tag 'course03' %>
+          <i class="course-link-icon fa fa-link"></i>
+        </a>
+        <a class="course-title" href="#">Fun activity</a>
+        <%= link_to 'Play', activities_path, class:"main-button icon-button" %>
+      </div>
+    </div>
+  </div>
 <!-- /Courses -->
   
 </div>

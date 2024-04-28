@@ -5,6 +5,6 @@
 //= link logo.png
 
 
-
+//= link style.css
 
 //= link_tree ../builds

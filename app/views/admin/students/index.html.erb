@@ -38,7 +38,7 @@
         <td><%= student.address %></td>
         <td>
           <%= link_to 'View', admin_student_path(student), class:'btn btn-primary' %>
-          <%= link_to 'Edit', edit_admin_student_path(student), class:'btn btn-warning' %>
+          <%= link_to 'Edit', edit_admin_student_path(student), class:'btn btn-warning', data: { bs_toggle: "modal", bs_target: "#editUserModal" } %>
           <%= link_to 'Delete',admin_student_path(student), data: { turbo_method: :delete, turbo_confirm: 'Are You Sure to Delete this student?'}, class:'btn btn-danger' %>
         </td>
       </tr>
@@ -48,3 +48,6 @@
   <%= link_to "New Student", new_admin_student_path, class: 'btn btn-success' %> 
 </div>
 <!-- /Courses -->
+
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+</div>

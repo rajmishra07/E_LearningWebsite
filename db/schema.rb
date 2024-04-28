@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_17_094959) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_02_195122) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,6 +46,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_094959) do
     t.text "description"
   end
 
+  create_table "quizzes", force: :cascade do |t|
+    t.string "question"
+    t.string "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "options"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "first_name"
     t.string "middle_name"
@@ -63,10 +71,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_094959) do
   create_table "syllabuses", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["student_id"], name: "index_syllabuses_on_student_id"
+  end
+
+  create_table "test_questions", force: :cascade do |t|
+    t.string "question"
+    t.text "options"
+    t.string "correct_option"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "score"
+    t.index ["user_id"], name: "index_test_questions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,15 +103,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_17_094959) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.boolean "submitted_quiz"
+    t.string "address"
+    t.string "contact"
+    t.string "Alternate_contact"
+    t.string "learner_type"
+    t.string "course"
     t.string "first_name"
     t.string "last_name"
     t.string "role"
-    t.boolean "admin", default: false
+    t.date "date_of_birth"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "syllabuses", "students"
+  add_foreign_key "test_questions", "users"
 end

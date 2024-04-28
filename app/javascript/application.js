@@ -5,6 +5,12 @@ import * as bootstrap from "bootstrap"
 import "google-map";
 import "jquery.min";
 import "main";
+import "style";
 
 import Rails from '@rails/ujs'
+
+// app/javascript/packs/application.js
+
+import "./app";
+
 Rails.start()

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  
+
+    resources :activities
+
+  get 'quiz/index'
+  get 'quiz/submit'
+  get 'quizzes/show'
+  #this is for the test model
+
   get  'about' => 'about_school#index'
   get 'contact/index'
-  get 'dashboard/index'
+  get 'member/:id', to:'members#show', as:'member'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -10,18 +17,25 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
   }
 
-  #get 'home/index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :courses do
+    member do
+      post 'enroll'
+    end
+  end
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/test_questions', to: 'test_questions#index'
+  resources :test_questions, only: [:index, :create,:show] do
+    collection do
+      post :submit
+    end
+  end
+
   root "home#index"
 
-  
+  resources :dashboards
   resources :students
   resources :syllabuses
   resources :blogs
-  resources :dashboards
   resources :blog_posts
 
 
@@ -29,10 +43,12 @@ Rails.application.routes.draw do
     resources :students
     resources :syllabuses
     resources :blogs
-    resources :dashboards
     resources :blog_posts
   end
 
-  #get '/dashboard' => 'dashboard#index', as: :dashboard
+   get '/quiz', to: 'quizzes#show', as: :quiz
+   post '/quiz/submit', to: 'quizzes#submit'
+
+  
 
 end

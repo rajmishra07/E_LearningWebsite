@@ -8,15 +8,17 @@ class User < ApplicationRecord
 
       
   def age
-    if dob.present?
+    if date_of_birth.present?
       now = Time.now.utc.to_date
-      dob = self.dob.to_date
+      dob = date_of_birth.to_date
       age = now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
       age >= 0 ? age : 0
     else
       0
     end
-  end 
+  end
+
+ 
   
 
   def admin?

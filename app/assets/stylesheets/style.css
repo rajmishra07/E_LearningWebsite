@@ -35,7 +35,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 	font-size: 15px;
     font-weight: 400;
-    color: #798696;
+    color: #789999;
+    background-color:#cacfd6;
 	overflow-x:hidden;
 }
 
@@ -64,8 +65,9 @@ h4 {
 
 a {
 	font-family: 'Lato', sans-serif;
-	color: #374050;
+	color: #374050;	
 	font-weight: 700;
+	text-decoration: none;
 }
 
 a:hover,
@@ -704,7 +706,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 /* -- Footer copyright -- */
 .footer-copyright {
-	line-height:40px;
+	line-height:20px;
 }
 
 /* -- Footer Social -- */
@@ -720,7 +722,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .footer-social li a {
 	display:block;
 	width:40px;
-	height:40px;
+	height:30px;
 	line-height:40px;
 	text-align:center;
 	border-radius:50%;

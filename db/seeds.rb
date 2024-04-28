@@ -7,43 +7,36 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 ActiveRecord::Base.transaction do
-  student = Student.create(
-    first_name: 'Ajay',
-    middle_name: 'Singh',
-    last_name: 'Chouhan'
-  )
-  
-  10.times do |i|
-    student = Student.create(
-      first_name: "student#{i+1}",
-      middle_name: "Mstudent#{i+1}",
-      last_name: "Lstudent#{i+1}"
-    )
-  end
-  
-  5.times do |i|
-    syllabus = Syllabus.create(
-      title: "DummySyllabus#{i+1}",
-      description: "Some dummy syllabus#{i+1}",
-    )
-  end
-  
-  5.times do |i|
-    blog = Blog.create(
-      title: "TestBlog#{i+1}",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.#{i+1}",
-    )
-  end
-  
-  10.times do |i|
-    student = Student.create(
-      first_name: Faker::Name.first_name,
-      middle_name: Faker::Name.middle_name,
-      last_name: Faker::Name.last_name,
-      email: Faker::Internet.email,
-      date_of_birth: (Date.today + rand(1..30).days) - rand(24..36).years,
-      address: Faker::Address.full_address,
-    )
-    puts "Student #{i+1} created successfully."
-  end
+
+# db/seeds.rb
+
+Quiz.create(question: '1) What is the result of 5 + 3?', answer: 'B) 8', options: ['A) 7', 'B) 8', 'C) 9', 'D) 10'])
+Quiz.create(question: '2) If x = 4 and y = 2, what is the value of x * y?', answer: 'D) 12', options: ['A) 6', 'B) 8', 'C) 10', 'D) 12'])
+Quiz.create(question: '3) What is the area of a rectangle with length 6 units and width 4 units?', answer: 'B) 16 square units', options: ['A) 8 square units', 'B) 16 square units', 'C) 20 square units', 'D) 24 square units'])
+Quiz.create(question: '4) Solve for y in the equation 2y + 7 = 15.', answer: 'C) 5', options: ['A) 3', 'B) 4', 'C) 5', 'D) 6'])
+Quiz.create(question: '5) If a triangle has angles measuring 30°, 60°, and 90°, what type of triangle is it?', answer: 'D) Right-angled', options: ['A) Equilateral', 'B) Isosceles', 'C) Scalene', 'D) Right-angled'])
+Quiz.create(question: '6) What is the square root of 25?', answer: 'B) 5', options: ['A) 4', 'B) 5', 'C) 6', 'D) 7'])
+Quiz.create(question: '7) If a circle has a radius of 3 units, what is its circumference? (Use π ≈ 3.14)', answer: 'C) 18.84 units', options: ['A) 6.28 units', 'B) 9.42 units', 'C) 18.84 units', 'D) 28.26 units'])
+Quiz.create(question: '8) What is the product of 7 * 9?', answer: 'B) 63', options: ['A) 56', 'B) 63', 'C) 72', 'D) 81'])
+Quiz.create(question: '9) Simplify the expression 3 + 2 * 4.', answer: 'C) 11', options: ['A) 20', 'B) 15', 'C) 11', 'D) 14'])
+Quiz.create(question: '10) If a = 2 and b = 3, what is the value of a^2 + b^2?', answer: 'D) 13', options: ['A) 5', 'B) 7', 'C) 10', 'D) 13'])
+
+TestQuestion.create(
+  question: "1)What is the result of 5 + 3?",
+  options: ['A) 7', 'B) 8', 'C) 9', 'D) 10'],
+  correct_option: 'B) 8'
+)
+
+TestQuestion.create(
+  question: "2)Which planet is known as the Red Planet?",
+  options: ["A)Earth", "B) Mars", "C) Venus", "D) Jupiter"],
+  correct_option: "B) Mars"
+)
+
+TestQuestion.create(
+  question: "3)Who is the author of 'Pride and Prejudice'?",
+  options: ["A) Charles Dickens", "B) Jane Austen", "C) William Shakespeare", "D) Mark Twain"],
+  correct_option: "B) Jane Austen"
+)
+
 end

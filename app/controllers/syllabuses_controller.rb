@@ -45,6 +45,8 @@ class SyllabusesController < ApplicationController
     end   
   end
 
+  
+
   def set_sidebar
     @show_sidebar = true
   end
@@ -54,5 +56,7 @@ class SyllabusesController < ApplicationController
   def syllabus_params
     params.require(:syllabus).permit(:title, :description, :student_id)
   end
+
+  
 
 end

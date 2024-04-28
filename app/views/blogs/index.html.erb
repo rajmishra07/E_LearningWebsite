@@ -1,25 +1,3 @@
-<!-- <div class="container">
-  <div class="card shadow">
-   <div class="card-header text-center">
-     <h2>Blogs</h2>
-   </div>     
- </div>
- <div class="row">
-   <%# @blogs.each do |blog| %>
-   <div class="col-lg-3">
-    <%#= link_to blog_path(blog) do %>
-    <div class="card shadow mt-3">
-      <div class="card-body">
-        <p style="color:black; text-decoration:none;"><%#= blog.title %> </p>
-        <p style="color:black; text-decoration:none;"><%#= truncate blog.description, length: 50 %></p>
-      </div>  
-    </div>
-    <%# end %>
-  </div>
-  <%# end %>
-</div>
-</div>
--->
 <!-- Hero-area -->
 <div class="hero-area section">
   <!-- Backgound Image -->
@@ -55,8 +33,8 @@
             <div class="single-blog">
               <div class="blog-img">
                 <%= link_to blog_posts_path do %>
-                  <%= image_tag 'blog01' %>
-                  <% end %>
+                <%= image_tag 'blog01' %>
+                <% end %>
               </div>
               <h4>
                 <%= link_to blog_posts_path do %>
@@ -83,8 +61,8 @@
             <div class="single-blog">
               <div class="blog-img">
                 <%= link_to blog_posts_path do %>
-                  <%= image_tag 'blog02' %>
-                  <% end %>
+                <%= image_tag 'blog02' %>
+                <% end %>
               </div>
               <h4>
                 <%= link_to blog_posts_path do %>
@@ -111,8 +89,8 @@
             <div class="single-blog">
               <div class="blog-img">
                 <%= link_to blog_posts_path do %>
-                  <%= image_tag 'blog03' %>
-                  <% end %>
+                <%= image_tag 'blog03' %>
+                <% end %>
               </div>
               <h4>
                 <%= link_to blog_posts_path do %>
@@ -139,8 +117,8 @@
             <div class="single-blog">
               <div class="blog-img">
                 <%= link_to blog_posts_path do %>
-                  <%= image_tag 'blog04' %>
-                  <% end %>
+                <%= image_tag 'blog04' %>
+                <% end %>
               </div>
               <h4>
                 <%= link_to blog_posts_path do %>
@@ -162,51 +140,12 @@
           </div>
           <!-- /single blog -->
         </div>
-        <!-- /row -->
-
-        <!-- row -->
-        <div class="row">
-          <!-- pagination -->
-          <div class="col-md-12">
-            <div class="post-pagination">
-              <a href="#" class="pagination-back pull-left">Back</a>
-              <ul class="pages">
-                <li class="active">1</li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-              </ul>
-              <a href="#" class="pagination-next pull-right">Next</a>
-            </div>
-          </div>
-          <!-- pagination -->
-        </div>
-        <!-- /row -->
       </div>
       <!-- /main blog -->
 
       <!-- aside blog -->
       <div id="aside" class="col-md-3">
-        <!-- search widget -->
-        <div class="widget search-widget">
-          <form>
-            <input class="input" type="text" name="search" />
-            <button><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-        <!-- /search widget -->
-
-        <!-- category widget -->
-        <div class="widget category-widget">
-          <h3>Categories</h3>
-          <a class="category" href="#">Web <span>12</span></a>
-          <a class="category" href="#">Css <span>5</span></a>
-          <a class="category" href="#">Wordpress <span>24</span></a>
-          <a class="category" href="#">Html <span>78</span></a>
-          <a class="category" href="#">Business <span>36</span></a>
-        </div>
-        <!-- /category widget -->
-
+       
         <!-- posts widget -->
         <div class="widget posts-widget">
           <h3>Recents Posts</h3>
@@ -214,7 +153,7 @@
           <!-- single posts -->
           <div class="single-post">
             <%= link_to blog_posts_path, class: 'single-post-img' do %>
-              <%= image_tag 'post01' %>
+            <%= image_tag 'post01' %>
             <% end %>
             <%= link_to blog_posts_path do %> 
             Because of a football error, the employee left.
@@ -226,7 +165,7 @@
           <!-- single posts -->
           <div class="single-post">
             <%= link_to blog_posts_path, class: 'single-post-img' do %>
-              <%= image_tag 'post02' %>
+            <%= image_tag 'post02' %>
             <% end %>
             <%= link_to blog_posts_path do %> 
             Because of a football error, the employee left.
@@ -238,7 +177,7 @@
           <!-- single posts -->
           <div class="single-post">
             <%= link_to blog_posts_path, class: 'single-post-img' do %>
-              <%= image_tag 'post03' %>
+            <%= image_tag 'post03' %>
             <% end %>
             <%= link_to blog_posts_path do %> 
             Because of a football error, the employee left.
@@ -270,102 +209,6 @@
   <!-- container -->
 </div>
 <!-- /Blog -->
-
-<!-- Footer -->
-<footer id="footer" class="section">
-  <!-- container -->
-  <div class="container">
-    <!-- row -->
-    <div class="row">
-      <!-- footer logo -->
-      <div class="col-md-6">
-        <div class="footer-logo">
-          <a class="logo" href="/">
-            <%= image_tag 'logo' %>
-          </a>
-        </div>
-      </div>
-      <!-- footer logo -->
-
-      <!-- footer nav -->
-      <div class="col-md-6">
-        <ul class="footer-nav">
-          <li><li><a href="/">Home</a></li></li>
-          <li>
-            <%= link_to about_path do %>
-            About
-            <% end %>
-          </li>
-          <li>
-            <%= link_to syllabuses_path do %>
-            Courses
-            <% end %>
-          </li>
-          <li>
-            <%= link_to blogs_path do %>
-            Blog
-            <% end %>
-          </li>
-          <li>
-            <%= link_to contact_index_path do %>
-            Contact
-            <% end %>
-          </li>
-        </ul>
-      </div>
-      <!-- /footer nav -->
-    </div>
-    <!-- /row -->
-
-    <!-- row -->
-    <div id="bottom-footer" class="row">
-      <!-- social -->
-      <div class="col-md-4 col-md-push-8">
-        <ul class="footer-social">
-          <li>
-            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#" class="google-plus"
-            ><i class="fa fa-google-plus"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="instagram"
-            ><i class="fa fa-instagram"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-          </li>
-          <li>
-            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-          </li>
-        </ul>
-      </div>
-      <!-- /social -->
-
-      <!-- copyright -->
-      <div class="col-md-8 col-md-pull-4">
-        <div class="footer-copyright">
-          <span
-          >&copy; Copyright 2023. All Rights Reserved. | This template is
-          made with <i class="fa fa-heart-o" aria-hidden="true"></i> by
-          <a href="https://colorlib.com">Colorlib</a></span
-          >
-        </div>
-      </div>
-      <!-- /copyright -->
-    </div>
-    <!-- row -->
-  </div>
-  <!-- /container -->
-</footer>
-<!-- /Footer -->
-
 <!-- preloader -->
 <!-- <div id="preloader"><div class="preloader"></div></div> -->
     <!-- /preloader -->
